@@ -1,0 +1,382 @@
+/*AnimalFunnyFacts Styleguide*/
+
+/* -- Alle Seiten -- */
+
+body{height: 100%; margin: 0; font-family:  Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";}
+
+header{
+    background-color:dimgray;
+    height: 5vh;
+    width: 100%; left: 0; right: 0; top: 0;
+    margin: 0;
+    padding: 2%;
+    box-sizing: border-box;
+    position: fixed;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    z-index: +1;
+}
+/*Header Elemente*/
+#Logo{
+    font-family: Impact;
+    font-size: 150%;
+    color:#fa8072;
+    text-decoration: none;
+    flex: 1 1 30%;
+    margin-right:5%;
+}
+#facts{flex: 1 1 30%; color:aliceblue; margin-left: 5%; margin-right: 5%;}
+#games{flex: 1 1 30%; color:aliceblue; margin-left: 5%;}
+
+/*Impressum*/
+footer{
+    width: 100%;
+    padding: 3%;
+    margin-top: 5%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 33 vw;
+    grid-template-areas:
+        'Title Title Title'
+        'Left Middle Right';
+    column-gap: 1%;
+    background-color:lightgray;
+}
+#ImpTitle{grid-area: Title; align-content: left}
+#ImpLeft{
+    grid-area: Left;
+    display: grid;
+    grid-template-areas:
+        'Haupttext Haupttext Haupttext'
+        'Bild1 Bild2 Bild3';
+    column-gap: 1%;
+    row-gap: 0%;
+}
+#ImpLeft > p{grid-area: Haupttext; text-align: center;}
+#ImpLeftB1{grid-area: Bild1}
+#ImpLeftB2{grid-area: Bild2}
+#ImpLeftB3{grid-area: Bild3}
+#ImpMiddle{grid-area: Middle; align-content: center;}
+#ImpRight{grid-area: Right;  align-content: center;}
+
+
+
+/*Textelemente*/
+/*Abstand Webseitenrand*/ h1,h3,p{margin-left: 15%; margin-right: 15%}
+.Weiterleitung p{display:block;}
+h1{font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif", Times, serif; color: black; text-align: center;}
+h1, h3{text-align: center}
+
+/*Bilder*/
+#Webseitenlogo{height:40vh; width: auto;}
+.Portraits{height: 20vh; width: auto;}
+.Portraits + p{text-align:center; color:blue}
+
+/* -- Startseite -- */
+
+/*Weiterleitung zu Facts und Memorie*/
+.Weiterleitung{
+    display: grid;
+    grid-template-areas:
+        'LKachel LKachel Free RKachel RKachel'
+        'LKachel LKachel Free RKachel RKachel';
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+	margin-bottom: 100px;
+	box-sizing: border-box;
+    overflow: hidden;
+}
+#Frei{grid-area: Free; background-color: transparent; color: transparent;}
+#KachelLinks{grid-area: LKachel; align-items: center; background-color:lavender;}
+#KachelRechts{grid-area: RKachel; align-items: center; background-color: lavender;}
+
+#KachelLinks,
+#KachelRechts {
+    box-sizing: border-box;
+    padding: 20px;
+    overflow: hidden;
+	text-align: center;
+}
+
+/*Bilder Startseite*/
+.HomeRedirectPictures{width: 80%; max-width: 100%; height: auto; display: block; margin: 0 auto;}
+
+/*Hervorhebung Weiterleitungskacheln*/
+#KachelLinks:hover{background-color: #d2d2ff;}
+#KachelRechts:hover{background-color: #d2d2ff;}
+
+/* -- Fakten-Seite -- */
+
+/*Layout*/
+.FaktenContainer{background-color: lavender; padding: 2%; height: 28vh; margin-left: 2%; margin-right: 2%; visibility: hidden;}
+.FaktenContainer > img{width: 20%; height: auto; float: left; margin-right: 2%;}
+
+/*Hervorhebung angesehene Info*/
+.facts section:hover{
+    background-color: #d2d2ff;
+}
+
+/* -- Spiele-Seite -- */
+#gameboard {
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    grid-gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+    border-radius: 12px;
+    background-color: #d2d2ff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s; /*Karte dreht sich langsam um, background color macht dass der Übergang zwischen den Farben nicht so hart ist*/
+}
+
+.card.flipped{
+    background-color: lavender;
+    cursor: default;
+}
+
+#counter {
+    display: flex;
+    justify-content: center;
+}
+
+#buttonR {
+    display: flex;
+    justify-content: center;
+}
+
+#resetButton {
+    height: 50px;
+    width: 100px;
+    font-size: 15px;
+    border-radius: 12px;
+    border: none;
+    color: black;
+    background-color:lightgray;
+    cursor: pointer;
+}
+
+#Spiele-body > p{text-align: center;}   /*Zentriert den 1. Text Spieleseite*/
+
+
+/* ----- NAVIGATION (Desktop) ----- */
+#nav {
+    margin-left: auto;        /* ➜ Navigation rechtsbündig */
+    display: flex;            /* Links nebeneinander */
+    gap: 25px;                /* Mehr Abstand zwischen Links */
+}
+
+#nav a {
+    color: white;             /* Links weiß */
+    text-decoration: none;
+    padding: 8px 12px;        /* Mehr Platz um Text */
+}
+
+/* -------- Hamburger Button (Desktop: ausgeblendet)-------- */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN – HANDY
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        justify-content: space-between;
+    }
+
+    /* Hamburger sichtbar */
+    .hamburger {
+        display: block;
+		color: white;
+    }
+
+    /* Navigation ausgeblendet */
+    #nav {
+        display: none;
+        flex-direction: column;       /* Links untereinander */
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    /* Navigation sichtbar nach Klick */
+    #nav.active {
+        display: flex;
+    }
+
+    #nav a {
+        padding: 12px 20px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+        color: black;                /* Menülinks auf Handy schwarz */
+        text-decoration: none;
+    }
+
+    /* TEXT – kleiner auf dem Handy */
+    body {
+        font-size: 0.85rem;          /* Grundschrift kleiner */
+        padding-left: 10px;          /* Mehr Abstand am Rand */
+        padding-right: 10px;
+		box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 1.6rem;           /* Schrift kleiner */
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+		line-height: 1.5;
+    }
+
+    #Einleitung {
+        font-size: 0.85rem;
+        text-align: left;
+        padding: 0 10px;
+        box-sizing: border-box;
+		margin-left: 20px;
+    	margin-right: 20px;
+   
+		
+    }
+
+    /* KACHELN untereinander */
+    .Weiterleitung {
+		display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #KachelLinks1,
+    #KachelRechts1,
+    #KachelLinks2,
+    #KachelRechts2 {
+        width: 100%;
+    }
+
+    .HomeRedirectPictures {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* FOOTER */
+    footer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: left;
+		margin-left: -10px;
+        margin-right: -10px;
+        width: calc(100% + 20px);
+    }
+	
+	#ImpLeftB1 img,
+	#ImpLeftB2 img,
+	#ImpLeftB3 img {
+    	width: 90%;        /* kleiner als vorher, 90% der Box */
+    	height: auto;      /* proportional bleiben */
+    	display: block;    /* notwendig für zentrieren */
+    	margin: 10px auto; /* zentriert + Abstand oben/unten */
+	}
+
+	
+	#ImpTitle {
+    	text-align: center;
+	}
+	
+}
+
+/* ------ Fakten Seite - Responsive ------ */
+@media (max-width: 768px) {
+
+    /* Fakten-Container: Höhe automatisch, Abstand innen */
+    .FaktenContainer {
+        height: auto;
+        padding: 25px; /* Abstand innen */
+        margin: 5px;
+        display: flex;
+        flex-direction: column; /* Bild über Text */
+        gap: 15px; /* Abstand zwischen Bild und Text */
+    }
+
+    /* Bilder responsive: volle Breite */
+    .FaktenContainer > img {
+        width: 100%;
+        float: none;
+        margin-bottom: 10px;
+    }
+
+    /* Überschriften (h2) zentrieren */
+    .FaktenContainer h2 {
+        text-align: center;
+        margin-bottom: 10px; /* Abstand nach unten */
+    }
+
+    /* Fließtext padding anpassen */
+    .FaktenContainer p {
+		display: block !important; /* Flexbox überschreiben */
+        padding-left: 0px;
+        padding-right: 0px;
+        text-align: justify; /* optional, schöner Blocksatz */
+		margin: 0;
+    }
+}
+
+/* ------ Spiele Seite ------- */
+@media (max-width: 768px) {
+
+    #gameboard {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        gap: 8px;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .card {
+        width: 100%;
+        aspect-ratio: 1 / 1;   /* Karten bleiben quadratisch */
+        height: auto;
+        font-size: 1.6rem;
+    }
+
+    #counter {
+        font-size: 1rem;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    #resetButton {
+        width: 140px;
+        height: 50px;
+        font-size: 1rem;
+    }
+}
+

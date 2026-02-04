@@ -1,0 +1,73 @@
+<!--Spiele-Seite-->
+<!doctype html>
+<html>
+    <head>
+        <title>AnimalFunnyFacts-Games</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="AnimalsFunnyFacts Styleguide.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+    <body id="Spiele-body">
+        <header>
+            <a id="Logo" href="Startseite.html">AnimalsFunnyFacts</a>
+            
+			<!-- Hamburger Button -->
+			 <div class="hamburger" onclick="toggleMenu()">
+				☰
+			 </div>
+
+		  	<!-- Navigation -->
+		  	<nav id="nav">
+				<a href="Fakten-Seite.html">Fakten</a>
+				<a href="Spiele-Seite.html">Games</a>
+  			</nav>
+        </header>
+
+        <!--Absatz zwischen Header und Webseite-->
+        <br> <br> <br> <br> <br>
+        
+        <h1>Karten Suchspiel</h1>
+        <!--Abstand Überschrift + folgende Elemente-->
+        <br><br>
+
+        <p>Suche die Tierpaare.</p>
+        <div id="gameboard" class="gameboard"></div>
+        <br>
+        <div id="counter">Paare gefunden: 0</div>
+        <br>
+        <div id="buttonR">
+        <button id="resetButton" onclick="reset()">Neustart 🔄</button>
+        </div>
+
+
+        <!--Abstand zwischen Webseite und Impressum-->
+        <div id="AbstandGames"><style>#AbstandGames{height:100px; width: auto;}</style></div>
+        
+        <footer>
+            <h3 id="ImpTitle">Impressum</h3>
+            <div id="ImpLeft">
+                <p>Wer wir sind:</p>
+                <div id="ImpLeftB1">
+                    <img class="Portraits" src="Impressum Pic Detektiv Entchen.png">
+                    <p>Detektiv Entchen</p>
+                </div>
+                <div id="ImpLeftB2">
+                    <img class="Portraits" src="Impressum Pic Fellnasen Entchen.png">
+                    <p>Fellnasen Entchen</p>
+                </div>
+                <div id="ImpLeftB3">
+                    <img class="Portraits" src="Impressum Pic Drachen Entchen.png">
+                    <p>Drachen Entchen</p>
+                </div>
+            </div>
+            <p id="ImpMiddle">Wir sind 3 junge Enten-Designer aus Entenberg, die für ein Entenprojektprojekt diese Webseite erstellt haben. Wir verfolgen hier keine finanzielle Motivation und hoffen, ihr hattet Spaß beim Besuch unserer Seite. Auf Wiedersehen, schaut gerne mal wieder vorbei!<br><br>Verantwortliche: Maxime Musterfrau, <br>Entchenweg 12, <br>12345 Musterstadt <br>E-Mail: entchenclub@yahoo.de <br>Telefon: 0153 123456789</p>
+            <div id="ImpRight"> <img id="Webseitenlogo" src="Webseitenlogo.png"> </div>
+        </footer>
+
+        <!--Einbindung JavaScript Datei-->
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+        <script src="AnimalsFunnyFacts Funktionalität.js"></script>
+        
+    </body>
+</html>
